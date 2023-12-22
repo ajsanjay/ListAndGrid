@@ -97,6 +97,7 @@
 			children = (
 				183EF5A02B3225AF00D600EA /* SafariVC.swift */,
 				183EF5AB2B349AC800D600EA /* ViewByList.swift */,
+				183EF59A2B31B09200D600EA /* frameWorkDetailView.swift */,
 				183EF5B12B34A8F300D600EA /* GridView */,
 			);
 			path = ViewControllers;
@@ -124,7 +125,6 @@
 			children = (
 				183EF5A22B32B2AB00D600EA /* closeButton.swift */,
 				183EF5982B31A7D200D600EA /* frameworkTitleView.swift */,
-				183EF59A2B31B09200D600EA /* frameWorkDetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
