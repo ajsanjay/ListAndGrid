@@ -20,7 +20,10 @@ struct frameWorkDetailView: View {
                 .font(.body)
                 .padding()
             Spacer()
-            Button {
+            Link(destination: (URL(string: viewModel.frameWork.urlString) ?? URL(string: "www.apple.com")!), label: {
+                ButtonStyle(title: "Load More")
+            })
+           /* Button {
                 viewModel.isSafariOpened = true
             } label: {
 //                ButtonStyle(title: "Load More")
@@ -30,11 +33,11 @@ struct frameWorkDetailView: View {
             .controlSize(.large)
 //            .foregroundColor(.green)
             .buttonBorderShape(.capsule)
-            .tint(.red)
+            .tint(.red) */
         }
-        .fullScreenCover(isPresented: $viewModel.isSafariOpened, content: {
-            SafariVC(url: (URL(string: viewModel.frameWork.urlString) ?? URL(string: "www.apple.com")!))
-        })
+//        .fullScreenCover(isPresented: $viewModel.isSafariOpened, content: {
+//            SafariVC(url: (URL(string: viewModel.frameWork.urlString) ?? URL(string: "www.apple.com")!))
+//        })
 //        .sheet(isPresented: $isSafariOpened, content: {
 //            SafariVC(url: (URL(string: frameWork.urlString) ?? URL(string: "www.apple.com")!))
 //        })

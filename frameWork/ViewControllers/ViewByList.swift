@@ -18,6 +18,7 @@ struct ViewByList: View {
                 .onTapGesture {
                     viewModel.selectedObject = framework
                 }
+                .listStyle(.plain)
             }
             .navigationTitle("")
             .navigationBarHidden(true)
