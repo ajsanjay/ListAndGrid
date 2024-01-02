@@ -17,17 +17,25 @@ struct ViewByGrid: View {
                 LazyVGrid(columns: viewModel.columns) {
                     ForEach(MockData.frameWorkArray) {
                         framework in
-                        NavigationLink(value: framework) {
-                            frameworkTitleView(frameWork: framework)
-                        }
+//                        NavigationLink(value: framework) {
+//                            frameworkTitleView(frameWork: framework)
+//                        }
+                        frameworkTitleView(frameWork: framework)
+                            .onTapGesture {
+                                viewModel.selectedObject = framework
+                            }
                     }
                 }
             }
             .navigationTitle("")
-            .navigationDestination(for: frameWorkModel.self) {
-                framework in
-                frameWorkDetailView(frameWork: framework)
-            }
+            .navigationBarHidden(true)
+//            .navigationDestination(for: frameWorkModel.self) {
+//                framework in
+//                frameWorkDetailView(viewModel: FrameWorkDetailVM(frameWork: framework, isShowingDetail: $viewModel.isShowingDetail))
+//            }
+            .sheet(isPresented: $viewModel.isShowingDetail, content: {
+                frameWorkDetailView(viewModel: FrameWorkDetailVM(frameWork: viewModel.selectedObject ?? MockData.sampleFramework, isShowingDetail: $viewModel.isShowingDetail))
+            })
         }
     }
 }

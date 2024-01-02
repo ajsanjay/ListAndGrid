@@ -13,16 +13,17 @@ struct ViewByList: View {
     
     var body: some View {
         NavigationView {
-            List {
-                ForEach(MockData.frameWorkArray) { framework in
-                    NavigationLink(destination: frameWorkDetailView(frameWork: framework)//, isShowingDetail: $viewModel.isShowingDetail
-                    ) {
-                        frameworkTitleView(frameWork: framework, isList: true)
-                    }
+            List(MockData.frameWorkArray) { framework in
+                    frameworkTitleView(frameWork: framework, isList: true)
+                .onTapGesture {
+                    viewModel.selectedObject = framework
                 }
             }
-            .navigationTitle("🍎 Frameworks")
+            .navigationTitle("")
             .navigationBarHidden(true)
+            .sheet(isPresented: $viewModel.isShowingDetail, content: {
+                frameWorkDetailView(viewModel: FrameWorkDetailVM(frameWork: viewModel.selectedObject ?? MockData.sampleFramework, isShowingDetail: $viewModel.isShowingDetail))
+            })
         }
         .accentColor(Color(.label))
     }

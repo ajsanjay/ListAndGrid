@@ -9,21 +9,19 @@ import SwiftUI
 
 struct frameWorkDetailView: View {
     
-    let frameWork: frameWorkModel
-//    @Binding var isShowingDetail: Bool
-    @State private var isSafariOpened = false
+    @ObservedObject var viewModel: FrameWorkDetailVM
     
     var body: some View {
         VStack {
-//            closeButton(isShowingDetail: $isShowingDetail)
+            closeButton(isShowingDetail: $viewModel.isShowingDetail.wrappedValue)
 //            Spacer()
-            frameworkTitleView(frameWork: frameWork)
-            Text(frameWork.description)
+            frameworkTitleView(frameWork: viewModel.frameWork)
+            Text(viewModel.frameWork.description)
                 .font(.body)
                 .padding()
             Spacer()
             Button {
-                isSafariOpened = true
+                viewModel.isSafariOpened = true
             } label: {
 //                ButtonStyle(title: "Load More")
                 Label("Load More", systemImage: "book.fill")
@@ -34,8 +32,8 @@ struct frameWorkDetailView: View {
             .buttonBorderShape(.capsule)
             .tint(.red)
         }
-        .fullScreenCover(isPresented: $isSafariOpened, content: {
-            SafariVC(url: (URL(string: frameWork.urlString) ?? URL(string: "www.apple.com")!))
+        .fullScreenCover(isPresented: $viewModel.isSafariOpened, content: {
+            SafariVC(url: (URL(string: viewModel.frameWork.urlString) ?? URL(string: "www.apple.com")!))
         })
 //        .sheet(isPresented: $isSafariOpened, content: {
 //            SafariVC(url: (URL(string: frameWork.urlString) ?? URL(string: "www.apple.com")!))
@@ -44,6 +42,5 @@ struct frameWorkDetailView: View {
 }
 
 #Preview {
-    frameWorkDetailView(frameWork: MockData.sampleFramework)
-    //, isShowingDetail: .constant(false)
+    frameWorkDetailView(viewModel: FrameWorkDetailVM(frameWork: MockData.sampleFramework, isShowingDetail: .constant(false)))
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1808D2002B44061E00B3177B /* FrameWorkDetailVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1808D1FF2B44061E00B3177B /* FrameWorkDetailVM.swift */; };
 		183EF5852B31976B00D600EA /* frameWorkApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183EF5842B31976B00D600EA /* frameWorkApp.swift */; };
 		183EF5892B31976D00D600EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 183EF5882B31976D00D600EA /* Assets.xcassets */; };
 		183EF58C2B31976D00D600EA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 183EF58B2B31976D00D600EA /* Preview Assets.xcassets */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1808D1FF2B44061E00B3177B /* FrameWorkDetailVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameWorkDetailVM.swift; sourceTree = "<group>"; };
 		183EF5812B31976B00D600EA /* frameWork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = frameWork.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		183EF5842B31976B00D600EA /* frameWorkApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = frameWorkApp.swift; sourceTree = "<group>"; };
 		183EF5882B31976D00D600EA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -52,6 +54,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1808D1FE2B44060100B3177B /* frameWorkDetail */ = {
+			isa = PBXGroup;
+			children = (
+				1808D1FF2B44061E00B3177B /* FrameWorkDetailVM.swift */,
+				183EF59A2B31B09200D600EA /* frameWorkDetailView.swift */,
+			);
+			path = frameWorkDetail;
+			sourceTree = "<group>";
+		};
 		183EF5782B31976B00D600EA = {
 			isa = PBXGroup;
 			children = (
@@ -97,7 +108,7 @@
 			children = (
 				183EF5A02B3225AF00D600EA /* SafariVC.swift */,
 				183EF5AB2B349AC800D600EA /* ViewByList.swift */,
-				183EF59A2B31B09200D600EA /* frameWorkDetailView.swift */,
+				1808D1FE2B44060100B3177B /* frameWorkDetail */,
 				183EF5B12B34A8F300D600EA /* GridView */,
 			);
 			path = ViewControllers;
@@ -208,6 +219,7 @@
 				183EF59F2B321EF000D600EA /* frameWorkViewModel.swift in Sources */,
 				183EF5A72B32D14100D600EA /* LandingPage.swift in Sources */,
 				183EF5AE2B34A5CF00D600EA /* CheckCondition.swift in Sources */,
+				1808D2002B44061E00B3177B /* FrameWorkDetailVM.swift in Sources */,
 				183EF59D2B31B43A00D600EA /* ButtonStyle.swift in Sources */,
 				183EF5992B31A7D200D600EA /* frameworkTitleView.swift in Sources */,
 				183EF5932B31A12F00D600EA /* frameWorkModel.swift in Sources */,
